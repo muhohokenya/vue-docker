@@ -4,3 +4,5 @@ services:
 
 before_install:
   - docker build -t muhohoweb/vue .
+script:
+  - docker run muhohoweb/vue npm run dev
