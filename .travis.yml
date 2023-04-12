@@ -6,3 +6,14 @@ before_install:
   - docker build -t muhohoweb/vue .
 script:
   - docker run -p 80:80 -d --name docker_vue_containter muhohoweb/vue
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "vue-docker"
+  env: "Vuedocker-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-925389467684"
+  bucket_path: "vue-docker"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_ACCESS_SUCCESS
