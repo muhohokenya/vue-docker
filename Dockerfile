@@ -1,8 +1,6 @@
 # build stage
-FROM node:lts-alpine as build-stage
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y nodejs \
-    npm
+FROM node:current-buster as build-stage
+RUN apk add --update nodejs npm
 WORKDIR /app
 COPY package.json /app
 RUN npm install
