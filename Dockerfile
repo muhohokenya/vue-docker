@@ -1,6 +1,5 @@
 # build stage
 FROM node:current-buster as build-stage
-RUN apk add --update nodejs npm
 WORKDIR /app
 COPY package.json /app
 RUN npm install
