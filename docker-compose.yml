@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: "front_end_container"
+    image: 'muhohoweb/vue'
+#    build:
+#      target: 'develop-stage'
+    ports:
+      - '80:80'
+    volumes:
+      - ./:/app
+#    command: /bin/sh -c "npm run dev"
